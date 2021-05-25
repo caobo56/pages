@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta http-equiv="x-ua-compatible" content="IE=11" />
+<title>获取浏览器类型</title>
+</head>
+<div id = 'b-type'></div>
+<div id = 'c-type'></div>
+<body>
+
+</body>
+<script type="text/javascript">
+    window.onload=function(){
+        var bObj = document.getElementById('b-type');  
+        var ua = '浏览器信息为：\n'+navigator.userAgent.toLowerCase();  
+        bObj.innerHTML = ua;
+        // alert(bObj.innerHTML);
+        var cObj = document.getElementById('c-type');  
+        cObj.innerHTML = '浏览器类型为：';
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+  		    var v_weixin = ua.split('micromessenger')[1];
+  		    v_weixin = v_weixin.substring(1, 6);
+  		    v_weixin = v_weixin.split(' ')[0];
+  		    if (v_weixin.split('.').length == 2) {
+  		        v_weixin = v_weixin + '.0';
+  		    }
+  		    if (v_weixin < '6.0.2') {
+        		cObj.innerHTML = cObj.innerHTML + '微信老版本:' + v_weixin;       
+  		    } else {
+  		        cObj.innerHTML = cObj.innerHTML + '微信新版本:' + v_weixin;       
+  			}
+  		}else if (ua.match(/weibo/i) == "weibo") {
+        	cObj.innerHTML = cObj.innerHTML + 'weibo';       
+  		} else if (ua.indexOf('qq/') != -1) {
+        	cObj.innerHTML = cObj.innerHTML + 'qq';       
+  		} else if (/android|adr/gi.test(ua)) {  
+		// 安卓  
+        	cObj.innerHTML = cObj.innerHTML + 'android';
+       	} else if(/\(i[^;]+;( U;)? CPU.+Mac OS X/gi.test(ua)){//苹果  
+        	cObj.innerHTML = cObj.innerHTML + 'iOS';       
+       	} else if(/iPad/gi.test(ua)){  
+       	//ipad 
+       		cObj.innerHTML = cObj.innerHTML + 'iPad';        
+  		} else{
+  			var array = ua.split(" ");
+       		cObj.innerHTML = cObj.innerHTML + array[array.length-1];        
+  		}
+    }
+</script>
+</html>
