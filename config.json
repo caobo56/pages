@@ -1,0 +1,42 @@
+[
+	{
+		"name": "百度搜索",
+		"action": "html",
+		"loaction": "https://www.baidu.com/"
+	},
+	{
+		"name": "百度新闻",
+		"action": "html",
+		"loaction": "https://news.baidu.com/"
+	},
+	{
+		"name": "菜鸟教程",
+		"action": "html",
+		"loaction": "https://www.runoob.com/"
+	},
+	{
+		"name": "必应翻译",
+		"action": "html",
+		"loaction": "https://cn.bing.com/translator/"
+	},
+	{
+		"name": "html直接调用相机(内网)",
+		"action": "html",
+		"loaction": "http://10.10.174.47:5502/test3.html"
+	},
+	{
+		"name": "html测试",
+		"action": "html",
+		"loaction": "http://10.10.174.47:8082/#/preview"
+	},
+	{
+		"name": "系统相册",
+		"action": "APP",
+		"loaction": "http://app.sys.photo.com"
+	},
+	{
+		"name": "二维码扫描",
+		"action": "APP",
+		"loaction": "http://app.sys.qrCodeScan.com"
+	}
+]
